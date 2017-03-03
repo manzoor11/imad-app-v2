@@ -110,8 +110,7 @@ app.get('/', function (req, res) {
 });
 
 var pool = new Pool(config)
-
-var server = http.createServer(function(req, res) {
+app.get('/test-db', function (req, res) {
     //make a select request
     //return response with a result
     pool.query('SELECT * FROM test', function (err, result){
@@ -122,10 +121,6 @@ var server = http.createServer(function(req, res) {
         }
     });
 });
-
-app.get('/test-db', function (req, res) {
-    //make a select request and return respons with response
-})
 
 app.get(':/articleName', function(req, res)
 {    // articleName = article-one
