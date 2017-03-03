@@ -8,7 +8,7 @@ var config = {
     database: 'manzoor11',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: process.env.db-manzoor11-74299
+    password: 'db-manzoor11-74299'
 };
 var app = express();
 app.use(morgan('combined'));
