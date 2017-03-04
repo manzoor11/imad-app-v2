@@ -109,7 +109,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var pool = new Pool(config)
+var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
     //make a select request
     //return response with a result
@@ -122,8 +122,8 @@ app.get('/test-db', function (req, res) {
     });
 });
 
-app.get('/articles/:articleName', function(req, res)
-{    // articleName = article-one
+app.get('/articles/:articleName', function(req, res){
+    // articleName = article-one
     //articles[articleName] = {} content object for article one
    
    // SELECT *FROM article WHERE title = article-one
