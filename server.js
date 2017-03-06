@@ -123,7 +123,7 @@ app.get('/test-db', function (req, res) {
 });
 
 app.get('/articles/:articleName', function(req, res){
-    // articleName = article-one
+    // articleName == article-one
     //articles[articleName] = {} content object for article one
    
    // SELECT *FROM article WHERE title = article-one
