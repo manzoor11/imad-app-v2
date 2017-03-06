@@ -1,5 +1,4 @@
 //Submit username & password to login
-//submit Name
 var login = document.getElementById('login_btn');
 submit.onclick = function() {
     
