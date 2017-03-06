@@ -26,7 +26,7 @@ button.onclick = function() {
 
 //Submit username & password to login
 var login = document.getElementById('login_btn');
-submit.onclick = function() {
+login.onclick = function() {
     
     // creat a request to counter end point
      var request = new XMLHttpRequest();
