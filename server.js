@@ -21,34 +21,18 @@ app.get('/counter', function(req, res) {
 
 var articles = {
                  'article-one': {
-                    title: 'Article | Manzoor',
+                    title: ,
                     heading: 'Article One',
                     date: 'sep 30, 2016',
                     content: `  
-                                <p>
-                                    This is my content for my first article.This is my content for my first article.This is my content for my first article. 
-                                </p>
-                                <p>
-                                    This is my content for my first article.This is my content for my first article.
-                                </p>
-                                <p>
-                                    This is my content for my first article.
-                                </p> `
+
                 },
                  'article-two': {
                     title: 'Article Two | Manzoor',
                     heading: 'Article Two',
                     date: 'sep 30, 2016',
                     content: `  
-                                <p>
-                                    This is my content for my first article.This is my content for my first article.This is my content for my first article. 
-                                </p>
-                                <p>
-                                    This is my content for my first article.This is my content for my first article.
-                                </p>
-                                <p>
-                                    This is my content for my first article.
-                                </p> `
+                                 `
                 },
                  'article-three' : {
                     title: 'Article Three | Manzoor',
@@ -110,10 +94,10 @@ app.get('/', function (req, res) {
 });
 
 var pool = new Pool(config);
-app.get('/article-one', function (req, res) {
+app.get('/test-db', function (req, res) {
     //make a select request
     //return response with a result
-    pool.query('SELECT * FROM article', function (err, result){
+    pool.query('SELECT * FROM test', function (err, result){
         if(err){
             res.status(500).send(err.toString());
         } else{
