@@ -36,6 +36,7 @@ submit.onclick = function() {
 
 var button = document.getElementById("counter");
 button.onclick = function() {
+
   
   // creat a request to counter end point
   var request = new XMLHttpRequest();
@@ -57,6 +58,7 @@ button.onclick = function() {
     request.send(null);
 };
 
+/*
 //submit Name
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
@@ -92,3 +94,4 @@ submit.onclick = function() {
     request.send(null);
     
 };
+*/
