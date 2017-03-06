@@ -1,3 +1,37 @@
+//Submit username & password to login
+//submit Name
+var login = document.getElementById('login_btn');
+submit.onclick = function() {
+    
+    // creat a request to counter end point
+     var request = new XMLHttpRequest();
+     
+         //capture the response
+      request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE) {
+            // take some action 
+            if(request.status === 200) {
+              alert('Logged in succesfully');
+            } else if (repuest.status === 403) {
+                alert('Username/Password is incorrect');
+            } else if (repuest.status === 500) {
+                alert('something went wrong on the server');
+            }
+        }
+        // Not done yet
+      };
+    
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+      
+    // make request
+    request.open('POST', 'http://manzoor11.imad.hasura-app.io/login', true);
+    request.send(JSON.stringify({username: username, password: password}));
+    
+};
+
+
+
 // counter code
 
 var button = document.getElementById("counter");
