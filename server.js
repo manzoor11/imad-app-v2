@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
+var bodyParser = require('body-parser');
 
 var config = {
     user: 'manzoor11',
@@ -10,8 +12,10 @@ var config = {
     port: '5432',
     password: 'db-manzoor11-74299'
 };
+
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyParser.json());
 
 var counter = 0;
 app.get('/counter', function(req, res) {
@@ -60,6 +64,29 @@ function createTemplate(data)
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+function hash(input, salt) {
+    //how do we create hash?
+    var hashed = crypto.pbkdf25sync(input, salt, 10000, 512, 'sha512');
+    return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
+}
+
+app.post('/create-user', function(req,res) {
+    //username, password
+    //JSON
+    var username = req.body.username;
+    var password = req.body.password;
+    var salt = crypto.getRandomBytes(128).toString('hex');
+    var dbString = hash(password, salt);
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, dbString], function(err,result) {
+        if (err) {
+           res.status(500).send(err.toString());
+        } else {
+            res.send('User succesfully created: ' + userename);
+        }
+        
+    });
+});   
 
 var pool = new Pool(config);
 app.get('/test-db', function (req, res) {
