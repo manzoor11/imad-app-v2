@@ -19,38 +19,6 @@ app.get('/counter', function(req, res) {
     res.send(counter.toString());
 });
 
-var articles = {
-                 'article-one': {
-                    title: ,
-                    heading: 'Article One',
-                    date: 'sep 30, 2016',
-                    content: `  
-
-                },
-                 'article-two': {
-                    title: 'Article Two | Manzoor',
-                    heading: 'Article Two',
-                    date: 'sep 30, 2016',
-                    content: `  
-                                 `
-                },
-                 'article-three' : {
-                    title: 'Article Three | Manzoor',
-                    heading: 'Article Three',
-                    date: 'sep 30, 2016',
-                    content: `  
-                                <p>
-                                    This is my content for my first article.This is my content for my first article.This is my content for my first article. 
-                                </p>
-                                <p>
-                                    This is my content for my first article.This is my content for my first article.
-                                </p>
-                                <p>
-                                    This is my content for my first article.
-                                </p> `
-                }
-};
-
 function createTemplate(data) 
 {
     var title = data.title;
