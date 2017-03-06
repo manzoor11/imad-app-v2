@@ -1,3 +1,4 @@
+/*
 //Submit username & password to login
 var login = document.getElementById('login_btn');
 submit.onclick = function() {
@@ -29,7 +30,7 @@ submit.onclick = function() {
     
 };
 
-
+*/
 
 // counter code
 
